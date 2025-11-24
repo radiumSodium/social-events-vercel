@@ -8,11 +8,9 @@ dotenv.config();
 
 const app = express();
 
-// --- Config ---
 const uri = process.env.MONGO_URI;
 const port = process.env.PORT || 5000;
 
-// --- Middlewares ---
 app.use(
   cors({
     origin: ["https://social-events-platform-1fe94.web.app"],
@@ -21,7 +19,6 @@ app.use(
 );
 app.use(express.json());
 
-// --- Mongo setup (reused in serverless) ---
 let client;
 let db;
 let eventsCollection;
@@ -68,8 +65,6 @@ app.use(async (req, res, next) => {
   }
 });
 
-// --- Basic routes ---
-
 // Root
 app.get("/", (req, res) => {
   res.send("Social Development Events API is running.");
@@ -95,7 +90,6 @@ app.get("/test-db", async (req, res) => {
   }
 });
 
-// Optional: Seed demo events (DEV ONLY)
 app.get("/seed-demo-events", async (req, res) => {
   try {
     const now = new Date();
