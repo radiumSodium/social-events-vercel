@@ -13,3 +13,12 @@
 
 `app.post('/join-event')` |
 `app.post('')`
+
+### `/seed-demo-events` api
+
+```js
+app.get("/seed-demo-events", async (req, res) => {});
+
+// this api create the collection to MongoDB
+// this api should be called once. clicking this will populate the MongoDB collection and create some demodata.
+```
