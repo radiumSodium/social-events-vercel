@@ -9,10 +9,14 @@
 `app.get('/joined')` |
 `app.get('/test-db') for Testing the Database`
 
-### PUT API
+### POST API
 
 `app.post('/join-event')` |
 `app.post('')`
+
+### PUT API
+
+`app.put("/events/:id")`
 
 ### `/seed-demo-events` api
 
